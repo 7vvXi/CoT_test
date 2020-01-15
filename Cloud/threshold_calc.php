@@ -3,8 +3,7 @@ ini_set("display_errors", On);
 error_reporting(E_ALL);
 try{
 // PDOクラスのオブジェクトを作成
-//$pdo = new PDO('mysql:host=35.197.70.52;port=33060;dbname=pool;charset=utf8', 'c0117178', 'e6jA#gTz6', array(PDO::ATTR_EMULATE_PREPARES => false));
-$pdo = new PDO('mysql:host=localhost;dbname=home_pi;charset=utf8;', 'c0117178', 'e6jA#gTz6', array(PDO::ATTR_EMULATE_PREPARES => false));
+$pdo = new PDO('mysql:host=host;dbname=dbname;charset=utf8', 'user', 'password', array(PDO::ATTR_EMULATE_PREPARES => false));
 }catch(PDOException $e){
   exit('データベース接続失敗。'.$e->getMessage());
 }

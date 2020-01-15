@@ -7,7 +7,7 @@ import time
 import datetime
 
 # url address(GCP)
-url = 'http://34.83.195.250/sensor.php'
+url = '[クラウド送信先URL]'
 
 # initialize GPIO
 GPIO.setwarnings(False)

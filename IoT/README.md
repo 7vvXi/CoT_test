@@ -1,7 +1,7 @@
 ## プログラムについて
 Raspberry Piに設置し、クラウドへ送信するためのプログラム群です
 
-###　setup.py
+### setup.py
 センサー情報の初期設定に使用します
 
 ### send_sensor.py

@@ -1,2 +1,9 @@
 # CoT_test
-Test development of Raspberry Pi and cloud integration platform
+ラズパイとクラウドの統合プラットフォームの開発テストです。
+データの自動分類機能を開発しました。
+
+## IoT
+IoTデバイス用のプログラム群です
+
+## Cloud
+クラウド用のプログラム群です

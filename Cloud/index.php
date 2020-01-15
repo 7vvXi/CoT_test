@@ -35,7 +35,7 @@
         //画面構築完了後
         $(function() {
             //データを取得し、jsonというオブジェクトに入れる
-            $.getJSON("http://34.83.195.250/temp.php",function(json0){
+            $.getJSON("cache.php",function(json0){
                 $('#columns0').columns({
 	            data:json0,
 		    size:10,
@@ -58,7 +58,7 @@
         //画面構築完了後
         $(function() {
             //データを取得し、jsonというオブジェクトに入れる
-            $.getJSON("http://34.83.195.250/temp_pool.php",function(json1){
+            $.getJSON("temp_pool.php",function(json1){
                 $('#columns1').columns({
                     data:json1,
                     size:10,
@@ -81,7 +81,7 @@
         //画面構築完了後
         $(function() {
             //データを取得し、jsonというオブジェクトに入れる
-            $.getJSON("http://34.83.195.250/hum_pool.php",function(json2){
+            $.getJSON("hum_pool.php",function(json2){
                 $('#columns2').columns({
                     data:json2,
                     size:10,
@@ -104,7 +104,7 @@
         //画面構築完了後
         $(function() {
             //データを取得し、jsonというオブジェクトに入れる
-            $.getJSON("http://34.83.195.250/alt_pool.php",function(json3){
+            $.getJSON("alt_pool.php",function(json3){
                 $('#columns3').columns({
                     data:json3,
                     size:10,
@@ -127,7 +127,7 @@
         //画面構築完了後
         $(function() {
             //データを取得し、jsonというオブジェクトに入れる
-            $.getJSON("http://34.83.195.250/pres_pool.php",function(json4){
+            $.getJSON("pres_pool.php",function(json4){
                 $('#columns4').columns({
                     data:json4,
                     size:10,

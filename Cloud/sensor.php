@@ -3,14 +3,14 @@ ini_set("display_errors", On);
 error_reporting(E_ALL);
 try{
 // PDOクラスのオブジェクトを作成
-$pdo = new PDO('mysql:host=localhost;dbname=home_pi;charset=utf8', 'c0117178', 'e6jA#gTz6', array(PDO::ATTR_EMULATE_PREPARES => false));
+$pdo = new PDO('mysql:host=host;dbname=dbname;charset=utf8', 'user', 'password', array(PDO::ATTR_EMULATE_PREPARES => false));
 }catch(PDOException $e){
 exit('キャッシュ用DB接続失敗。'.$e->getMessage());
 }
 // DB処理
 switch ($_SERVER['REQUEST_METHOD']) {
     case 'GET':
-        $st = $pdo->query("select ts, temp from temp_val order by ts desc");
+        $st = $pdo->query("select ts, value from sensor_val order by ts desc");
         echo json_encode($st->fetchAll(PDO::FETCH_ASSOC));
         break;
 
@@ -27,7 +27,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
                 $flag = 0;
             }
 	    try{
-		$send_db = new PDO('mysql:host=168.62.172.140;port=3306;dbname=sensor_db;charset=utf8', 'c0117178', 'e6jA#gTz6', array(PDO::ATTR_EMULATE_PREPARES => false));
+		$pdo = new PDO('mysql:host=host;dbname=dbname;charset=utf8', 'user', 'password', array(PDO::ATTR_EMULATE_PREPARES => false));
 	    }catch(PDOException $e){
 		exit('データプールに接続失敗。'.$e->getMessage());
 	    }
@@ -37,7 +37,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
         }else if(array_key_exists('humid', $cha)){ //humidity
             $tgt = $cha['humid'];
 	    try{
-		$send_db = new PDO('mysql:host=34.83.247.18;port=33060;dbname=sensor_db;charset=utf8', 'c0117178', 'e6jA#gTz6', array(PDO::ATTR_EMULATE_PREPARES => false));
+		$pdo = new PDO('mysql:host=host;dbname=dbname;charset=utf8', 'user', 'password', array(PDO::ATTR_EMULATE_PREPARES => false));
 	    }catch(PDOException $e){
 		exit('データプールに接続失敗。'.$e->getMessage());
 	    }
@@ -47,7 +47,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
         }else if(array_key_exists('alt', $cha)){ //altitude
             $tgt = $cha['alt'];
 	    try{
-		$send_db = new PDO('mysql:host=13.112.134.144;port=3306;dbname=sensor_db;charset=utf8', 'c0117178', 'e6jA#gTz6', array(PDO::ATTR_EMULATE_PREPARES => false));
+		$pdo = new PDO('mysql:host=host;dbname=dbname;charset=utf8', 'user', 'password', array(PDO::ATTR_EMULATE_PREPARES => false));
 	    }catch(PDOException $e){
 		exit('データプールに接続失敗。'.$e->getMessage());
 	    }
@@ -57,7 +57,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
         }else if(array_key_exists('pres', $cha)){ //barometric pressure
             $tgt = $cha['pres'];
 	    try{
-		$send_db = new PDO('mysql:host=localhost;port=3306;dbname=sensor_db;charset=utf8', 'c0117178', 'e6jA#gTz6', array(PDO::ATTR_EMULATE_PREPARES => false));
+		$pdo = new PDO('mysql:host=host;dbname=dbname;charset=utf8', 'user', 'password', array(PDO::ATTR_EMULATE_PREPARES => false));
 	    }catch(PDOException $e){
 		exit('データプールに接続失敗。'.$e->getMessage());
 	    }
